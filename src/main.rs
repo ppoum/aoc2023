@@ -19,6 +19,8 @@ fn main() {
     match challenge.as_str() {
         "1a" => println!("{}", aoc2023::day01::part1(input)),
         "1b" => println!("{}", aoc2023::day01::part2(input)),
+        "2a" => println!("{}", aoc2023::day02::part1(input)),
+        "2b" => println!("{}", aoc2023::day02::part2(input)),
         _ => eprintln!("Invalid day"),
     }
 }

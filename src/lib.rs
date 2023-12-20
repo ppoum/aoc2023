@@ -1,4 +1,5 @@
 pub mod day01;
+pub mod day02;
 
 pub fn parse_file(path: &str) -> Vec<String> {
     // Read file, return line iterator
