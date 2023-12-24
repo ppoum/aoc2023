@@ -10,7 +10,7 @@ pub fn part1(lines: Vec<String>) -> u32 {
         // Sets = n color, n color; n color...
         for set in sets.split(';').map(|s| s.trim()) {
             // Split set in items
-            let mut items = set
+            let items = set
                 .split(", ")
                 .map(|s| s.split_whitespace().collect::<Vec<&str>>());
             for item in items {
@@ -47,7 +47,7 @@ pub fn part2(lines: Vec<String>) -> u32 {
         let (mut red, mut green, mut blue) = (0, 0, 0);
         let sets = line.split(':').nth(1).unwrap();
         for set in sets.split(';').map(|s| s.trim()) {
-            let mut items = set
+            let items = set
                 .split(", ")
                 .map(|s| s.split_whitespace().collect::<Vec<&str>>());
             for item in items {
