@@ -55,16 +55,6 @@ pub fn part2(lines: Vec<String>) -> u32 {
         .map(|r| r.start.try_into().unwrap())
         .min()
         .unwrap()
-    // for r in seed_ranges {
-    //     for seed in r {
-    //         let mut val = seed;
-    //         for mapping in mappings.iter() {
-    //             val = convert_via_mapping(val, mapping);
-    //         }
-    //         result = result.min(val);
-    //     }
-    // }
-    // result.try_into().unwrap()
 }
 
 fn parse_mappings(lines: &[String]) -> Vec<Vec<(usize, usize, usize)>> {
@@ -74,7 +64,6 @@ fn parse_mappings(lines: &[String]) -> Vec<Vec<(usize, usize, usize)>> {
     while let Some(line) = lines.get(line_idx) {
         line_idx += 1;
         if line.is_empty() {
-            // TODO go to new map group
             mappings.push(current_mapping);
             current_mapping = Vec::new();
             continue;
@@ -263,24 +252,6 @@ mod tests {
         .to_vec();
 
         assert_eq!(part2(data), 46);
-    }
-
-    #[test]
-    fn test_testing() {
-        // dst, src, length
-        // 0..69 -> 1..70, 69..70 -> 0..1
-        // let mut mappings = vec![(1, 0, 69), (0, 69, 1)];
-        let mut mappings = vec![(50, 98, 2), (52, 50, 48)];
-        mappings.sort_by(|a, b| a.1.cmp(&b.1));
-        println!("{:?}", mappings);
-
-        // let original = 68..74;
-        // 68, 69, 70, 71, 72, 73
-        // 69,  0, 70, 71, 72, 73
-        let original = 79..93;
-        let new_ranges = convert_range(original, &mappings);
-        println!("{:?}", new_ranges);
-        // assert_eq!(0, 1);
     }
 }
 
