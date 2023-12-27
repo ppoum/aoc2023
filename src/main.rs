@@ -25,6 +25,8 @@ fn main() {
         "3b" => println!("{}", aoc2023::day03::part2(input)),
         "4a" => println!("{}", aoc2023::day04::part1(input)),
         "4b" => println!("{}", aoc2023::day04::part2(input)),
+        "5a" => println!("{}", aoc2023::day05::part1(input)),
+        "5b" => println!("{}", aoc2023::day05::part2(input)),
         _ => eprintln!("Invalid day"),
     }
 }
